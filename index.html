@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -51,7 +51,7 @@
 
                 <!-- Logged Out State -->
                 <li class="nav-item">
-                    <a class="btn btn-light btn-sm px-4 rounded-pill text-primary fw-semibold" href="/login">
+                    <a class="btn btn-light btn-sm px-4 rounded-pill text-primary fw-semibold" href="https://attendex-backend-iiis.onrender.com/login">
                         <i class="bi bi-box-arrow-in-right me-1"></i> Sign In
                     </a>
                 </li>
@@ -75,7 +75,7 @@
                     Attendex provides unified attendance tracking, multi-role security, real-time analytics, and CSV exports designed specifically for colleges, faculty, and students.
                 </p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="/login" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">
+                    <a href="https://attendex-backend-iiis.onrender.com/login" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">
                         <i class="bi bi-box-arrow-in-right me-2"></i> Sign In to Portal
                     </a>
                 </div>
@@ -88,7 +88,7 @@
                         <small class="text-white-50">Enter credentials provided by administration</small>
                     </div>
                     <div class="card-body p-4 bg-white">
-                        <form action="/login" method="post"><input type="hidden" name="_csrf" value="Y7XhZ1VpE0VNlof9YU4naWIJ_V6_4RcuMJoz5xhA9s7oYChxV4TSUDNbcHVgpbWYWGMTDFtt0DzZhyMDVvgF1n4iwvbZWU5A"/>
+                        <form action="https://attendex-backend-iiis.onrender.com/login" method="post">
                             <div class="mb-3">
                                 <label for="homeUsername" class="form-label small fw-semibold text-muted">Username</label>
                                 <div class="input-group">
@@ -242,17 +242,13 @@
             </div>
             <div class="col-lg-6">
                 <div class="p-4 bg-light rounded-4 border">
-                    <h5 class="fw-bold text-dark mb-3"><i class="bi bi-terminal me-2 text-primary"></i>System Credentials</h5>
-                    <p class="small text-muted mb-3">Default accounts pre-configured for local testing and administration:</p>
-                    <div class="table-responsive">
-                        <table class="table table-sm table-bordered bg-white mb-0">
-                            <thead class="table-light"><tr><th>Role</th><th>Username</th><th>Password</th></tr></thead>
-                            <tbody>
-                                <tr><td><span class="badge bg-primary">Admin</span></td><td><code>admin</code></td><td><code>admin123</code></td></tr>
-                                <tr><td><span class="badge bg-info">Student</span></td><td><code>kommu</code></td><td><em>User defined</em></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <h5 class="fw-bold text-dark mb-3"><i class="bi bi-shield-check me-2 text-primary"></i>Enterprise Security &amp; Access</h5>
+                    <p class="small text-muted mb-3">Institution accounts are safeguarded with industry-standard role-based controls:</p>
+                    <ul class="list-unstyled text-muted small mb-0">
+                        <li class="mb-2"><i class="bi bi-lock-fill text-primary me-2"></i><strong>Centralized Provisioning:</strong> Accounts are assigned and managed by institution administrators.</li>
+                        <li class="mb-2"><i class="bi bi-fingerprint text-primary me-2"></i><strong>BCrypt Password Hashing:</strong> Credentials are encrypted with salted one-way hashing.</li>
+                        <li class="mb-0"><i class="bi bi-shield-shaded text-primary me-2"></i><strong>Zero Public Exposure:</strong> System credentials are kept strictly private.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -290,7 +286,7 @@
             </div>
             <p class="mb-0 text-muted small">&copy; 2026 Attendex — Java Full Stack Attendance Management System. All rights reserved.</p>
             <div>
-                <a href="/login" class="text-muted small text-decoration-none me-3">Login</a>
+                <a href="https://attendex-backend-iiis.onrender.com/login" class="text-muted small text-decoration-none me-3">Login</a>
                 <a href="/#contact" class="text-muted small text-decoration-none">Support</a>
             </div>
         </div>

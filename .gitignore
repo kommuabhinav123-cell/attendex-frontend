@@ -3,6 +3,7 @@ node_modules/
 package-lock.json
 package.json
 .vercel/
+dist/
 
 # IDE & Editors
 .idea/
@@ -20,3 +21,5 @@ Thumbs.db
 
 # Logs
 *.log
+
+.vercel
