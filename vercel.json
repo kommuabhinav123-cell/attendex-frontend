@@ -2,12 +2,12 @@
   "version": 2,
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/api/:match*", "destination": "https://attendex-backend-iiis.onrender.com/api/:match*" },
-    { "source": "/admin/:match*", "destination": "https://attendex-backend-iiis.onrender.com/admin/:match*" },
-    { "source": "/faculty/:match*", "destination": "https://attendex-backend-iiis.onrender.com/faculty/:match*" },
-    { "source": "/student/:match*", "destination": "https://attendex-backend-iiis.onrender.com/student/:match*" },
-    { "source": "/login", "destination": "https://attendex-backend-iiis.onrender.com/login" },
-    { "source": "/logout", "destination": "https://attendex-backend-iiis.onrender.com/logout" },
+    { "source": "/api/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/api/:match*" },
+    { "source": "/admin/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/admin/:match*" },
+    { "source": "/faculty/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/faculty/:match*" },
+    { "source": "/student/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/student/:match*" },
+    { "source": "/login", "destination": "https://attendex-backend-wtd1.onrender.com/login" },
+    { "source": "/logout", "destination": "https://attendex-backend-wtd1.onrender.com/logout" },
     { "source": "/", "destination": "/index.html" }
   ]
 }
