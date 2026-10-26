@@ -2,6 +2,8 @@
   "version": 2,
   "cleanUrls": true,
   "rewrites": [
+    { "source": "/css/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/css/:match*" },
+    { "source": "/js/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/js/:match*" },
     { "source": "/api/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/api/:match*" },
     { "source": "/admin/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/admin/:match*" },
     { "source": "/faculty/:match*", "destination": "https://attendex-backend-wtd1.onrender.com/faculty/:match*" },

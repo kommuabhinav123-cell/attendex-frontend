@@ -51,7 +51,7 @@
 
                 <!-- Logged Out State -->
                 <li class="nav-item">
-                    <a class="btn btn-light btn-sm px-4 rounded-pill text-primary fw-semibold" href="https://attendex-backend-iiis.onrender.com/login">
+                    <a class="btn btn-light btn-sm px-4 rounded-pill text-primary fw-semibold" href="/login">
                         <i class="bi bi-box-arrow-in-right me-1"></i> Sign In
                     </a>
                 </li>
@@ -75,7 +75,7 @@
                     Attendex provides unified attendance tracking, multi-role security, real-time analytics, and CSV exports designed specifically for colleges, faculty, and students.
                 </p>
                 <div class="d-flex flex-wrap gap-3">
-                    <a href="https://attendex-backend-iiis.onrender.com/login" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">
+                    <a href="/login" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">
                         <i class="bi bi-box-arrow-in-right me-2"></i> Sign In to Portal
                     </a>
                 </div>
@@ -88,13 +88,13 @@
                         <small class="text-white-50">Enter credentials provided by administration</small>
                     </div>
                     <div class="card-body p-4 bg-white">
-                        <form action="https://attendex-backend-iiis.onrender.com/login" method="post">
+                        <form action="/login" method="post">
                             <div class="mb-3">
-                                <label for="homeUsername" class="form-label small fw-semibold text-muted">Username</label>
+                                <label for="homeUsername" class="form-label small fw-semibold text-muted">User ID / Username / Roll No / Employee ID</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-light border-end-0"><i class="bi bi-person text-muted"></i></span>
                                     <input type="text" id="homeUsername" name="username" class="form-control border-start-0 ps-0"
-                                           placeholder="Enter username" required>
+                                           placeholder="Username, User ID, Roll No, or Employee ID" required>
                                 </div>
                             </div>
                             <div class="mb-4">
@@ -286,7 +286,7 @@
             </div>
             <p class="mb-0 text-muted small">&copy; 2026 Attendex — Java Full Stack Attendance Management System. All rights reserved.</p>
             <div>
-                <a href="https://attendex-backend-iiis.onrender.com/login" class="text-muted small text-decoration-none me-3">Login</a>
+                <a href="/login" class="text-muted small text-decoration-none me-3">Login</a>
                 <a href="/#contact" class="text-muted small text-decoration-none">Support</a>
             </div>
         </div>
