@@ -86,14 +86,9 @@
                 <!-- Direct Login Widget -->
                 <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
                     <div class="card-header bg-primary text-white py-3 text-center">
-                        <h5 class="mb-0 fw-bold"><i class="bi bi-shield-lock me-2"></i>Direct Portal Login</h5>
-                        <small class="text-white-50">Enter credentials provided by administration</small>
+                        <h5 class="mb-0 fw-bold"><i class="bi bi-shield-lock me-2"></i>Sign In</h5>
                     </div>
                     <div class="card-body p-4 bg-white">
-                        <div id="cloudStatusBadge" class="d-flex align-items-center mb-3 px-3 py-2 rounded-3 bg-light border small text-muted">
-                            <span class="spinner-grow spinner-grow-sm text-primary me-2" role="status" id="cloudStatusDot" style="width: 0.65rem; height: 0.65rem;"></span>
-                            <span id="cloudStatusText" class="fw-medium">Checking cloud system...</span>
-                        </div>
                         <form action="/login" method="post" id="directLoginForm">
                             <div class="mb-3">
                                 <label for="homeUsername" class="form-label small fw-semibold text-muted">User ID / Username / Roll No / Employee ID</label>
@@ -303,63 +298,8 @@
     <script src="/js/app.js"></script>
     <script>
         (function() {
-            const statusDot = document.getElementById('cloudStatusDot');
-            const statusText = document.getElementById('cloudStatusText');
-            const form = document.getElementById('directLoginForm');
-            const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
-            let isWarming = false;
-
-            function checkHealth(attempt) {
-                attempt = attempt || 1;
-                fetch('/api/health', { method: 'GET', cache: 'no-cache' })
-                    .then(function(res) {
-                        if (res.ok) return res.json();
-                        throw new Error('Warming');
-                    })
-                    .then(function(data) {
-                        isWarming = false;
-                        if (statusDot) {
-                            statusDot.className = 'badge rounded-pill bg-success me-2 p-1';
-                            statusDot.innerHTML = '<i class="bi bi-check-lg" style="font-size: 0.65rem;"></i>';
-                        }
-                        if (statusText) {
-                            statusText.className = 'text-success fw-semibold';
-                            statusText.textContent = 'Cloud Database Connected (Ready)';
-                        }
-                        if (submitBtn && submitBtn.hasAttribute('data-waiting')) {
-                            submitBtn.removeAttribute('data-waiting');
-                            submitBtn.disabled = false;
-                            submitBtn.innerHTML = '<i class="bi bi-box-arrow-in-right me-2"></i> Sign In';
-                            form.submit();
-                        }
-                    })
-                    .catch(function() {
-                        isWarming = true;
-                        if (statusDot) {
-                            statusDot.className = 'spinner-border spinner-border-sm text-warning me-2';
-                        }
-                        if (statusText) {
-                            statusText.className = 'text-warning-emphasis fw-medium';
-                            statusText.textContent = 'Cloud backend waking up... Ready in moments';
-                        }
-                        if (attempt < 45) {
-                            setTimeout(function() { checkHealth(attempt + 1); }, 3000);
-                        }
-                    });
-            }
-
-            checkHealth(1);
-
-            if (form && submitBtn) {
-                form.addEventListener('submit', function(e) {
-                    if (isWarming && statusText && statusText.textContent.indexOf('waking up') !== -1) {
-                        e.preventDefault();
-                        submitBtn.setAttribute('data-waiting', 'true');
-                        submitBtn.disabled = true;
-                        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Waking Server...';
-                    }
-                });
-            }
+            // Background keep-alive ping to ensure server remains warm
+            fetch('/api/health', { method: 'GET', cache: 'no-cache' }).catch(function() {});
         })();
     </script>
 </div>
